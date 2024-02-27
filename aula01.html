@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Contador</h1>
+    <p id="Contador">0</p>
+    <button onclick="Somar()">Adicionar</button>
+    <button onclick="Subtrairr()">Subtrair</button>
+</body>
+<script>
+    let Contador = 0;
+    function Somar() {
+        Contador++
+        document.getElementById("Contador").innerText = Contador;
+    }
+</script>
+
+<script>
+    let Cont = 0;
+    function Subtrair() {
+        Contador--
+        document.getElementByID("Contador").innerText = Contador;
+
+    }
+</script>
+
+
+</html>
