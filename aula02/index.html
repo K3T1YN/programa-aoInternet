@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>iRock - The Virtual Pet Rock</title>
+  </head>
+
+  <body onload ="alert('Olá Info4v')">
+    <div style="margin-top:100px; text-align:center">
+      <img id="rockImg" src="rock.png" onclick="touchRock()" alt="iRock" />
+    </div>
+  </body> 
+  <script>
+    function touchRock () {
+        let userName = prompt("Qual seu nome?", "Digite aqui.");
+        if (userName) {
+            alert("Que bom conhece-lo(a)" + userName + ".");
+            document.getElementById("rockImg").src = "rock_happy png";
+
+        }
+    }
+  </script>
+</html>
+ 
