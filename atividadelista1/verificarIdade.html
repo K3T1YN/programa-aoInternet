@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Digite o ano que você nasceu, para descobrir a sua idade:</h3>
+    <label for="ano">Ano de nascimento: </label>
+    <input type="number" id="ano">
+    <button onclick="verificarIdade()">Verificar idade</button>
+    
+    <script>
+        function verificarIdade(){
+            const nascimento = parseInt(document.getElementById('ano').value);
+            const anoAtual = new Date("2024").getFullYear();
+            const idade = anoAtual - nascimento
+            
+            alert('Sua idade é: ' + idade);
+
+        }
+        
+    </script>
+
+</body>
+</html>
