@@ -3,17 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Verificador de Idade</title>
 </head>
 <body>
-    <h3>Tente adivinhar digitando um número:</h3>
-    <button onclick="adivinha()">Adivinhe</button>
+    <h3>Vou descobrir sua idade!</h3>
+    Data: <input type="date" id="datadeNascimento">
+    <button onclick="Calcular()">Calcular</button>
 
+    <script>
+        function Calcular(){
+            let datadeNascimento = new Date(document.getElementById("datadeNascimento").value);
+            let dataAtual = new Date();
 
-    
+            let diferenca = dataAtual.getFullYear() - datadeNascimento.getFullYear();
+           
+            alert("Você tem " + diferenca + " anos!");
+        } 
+    </script>
 </body>
-
-<script>
-    num_computador = 
-</script>
 </html>
