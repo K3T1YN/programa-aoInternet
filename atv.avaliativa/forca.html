@@ -33,7 +33,7 @@
 
         function checkLetter() {
             if (tentativas >= maxTentativas) {
-                alert("Você excedeu o número máximo de tentativas. A palavra secreta era: " + palavraSecreta);
+                alert("Parabéns! A palavra era: " + palavraSecreta);
                 location.reload();
                 return;
             }
@@ -65,11 +65,11 @@
             document.getElementById("guessInput").value = "";
 
             if (!palavraEscondida.includes("-")) {
-                alert("Parabéns! Você acertou a palavra! A palavra era " + palavraSecreta);
+                alert("Parabéns! A palavra era: " + palavraSecreta);
                 location.reload();
-            }
+            }  
             if (tentativas >= maxTentativas) {
-                alert("Você excedeu o número máximo de tentativas. A palavra secreta era: " + palavraSecreta);
+                alert("Infelizmente suas tentativas acabaram. A palavra era: " + palavraSecreta);
                 location.reload();
             }
         }
