@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="forca.css">
+    <title>Jogo da Forca</title>
+</head>
+<body>
+    <div class="Forca"></div>
+    <h3>Jogo da Forca</h3>
+    <p id="wordDisplay">-----</p>
+    <input type="text" id="guessInput" placeholder="Digite uma letra">
+    <BR></BR>
+    <button onclick="checkLetter()">Verificar</button>
+  
+    <h4>Letras Digitadas:</h4>
+    <p id="guessedLetters"></p>
+
+    <script>
+        const palavras = ["GIRAFA", "CAVALO", "GATO", "CACHORRO", "OVELHA", "VACA"];
+        let palavraSecreta = palavras[Math.floor(Math.random() * palavras.length)];
+
+        let palavraEscondida = "";
+        for (let i = 0; i < palavraSecreta.length; i++) {
+            palavraEscondida += "-";
+        }
+        document.getElementById("wordDisplay").textContent = palavraEscondida;
+
+        const letrasDigitadas = [];
+        const maxTentativas = 9;
+        let tentativas = 0;
+
+        function checkLetter() {
+            if (tentativas >= maxTentativas) {
+                alert("Você excedeu o número máximo de tentativas. A palavra secreta era: " + palavraSecreta);
+                location.reload();
+                return;
+            }
+            const letra = document.getElementById("guessInput").value.toUpperCase();
+
+            if (letrasDigitadas.includes(letra)) {
+                alert("Esta letra já foi digitada. Por favor, tente outra.");
+                return;
+            }
+
+            letrasDigitadas.push(letra);
+            let novaPalavraEscondida = "";
+            let acertou = false;
+
+            for (let i = 0; i < palavraSecreta.length; i++) {
+                if (palavraSecreta[i] === letra) {
+                    novaPalavraEscondida += letra;
+                    acertou = true;
+                } else {
+                    novaPalavraEscondida += palavraEscondida[i];
+                }
+            }
+            if (!acertou) {
+                tentativas++;
+            }
+            palavraEscondida = novaPalavraEscondida;
+            document.getElementById("wordDisplay").textContent = palavraEscondida;
+            document.getElementById("guessedLetters").textContent = letrasDigitadas.join(' ');
+            document.getElementById("guessInput").value = "";
+
+            if (!palavraEscondida.includes("-")) {
+                alert("Parabéns! Você acertou a palavra! A palavra era " + palavraSecreta);
+                location.reload();
+            }
+            if (tentativas >= maxTentativas) {
+                alert("Você excedeu o número máximo de tentativas. A palavra secreta era: " + palavraSecreta);
+                location.reload();
+            }
+        }
+    </script>
+</body>
+</html>
