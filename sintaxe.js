@@ -82,15 +82,43 @@ white (contador < 5) {
 
 
 
+// aula 26/03
 
+var ListaDeFruta = ["Maçãs", "uvas", "Bananas", "Abacaxis"]
 
+var primeiroItem = ListaDeFruta[0];
+var segundoItem = ListaDeFruta[1];
+var terceiroItem = ListaDeFruta[2];
 
+ListaDeFruta.forEach(function(item, indice){
+    console.log(item, indice)
+})
 
+//for Each - é um tipo de for que itera(percorre) um array(lista)
+var posicao = ListaDeFruta.indexOf("Bananas") // pos= 2
 
+/* Adicionar - Remover Itens da lista */
 
+// no final da lista
+ListaDeFruta.push("Laranjas") // ["Maçãs", "uvas", "Bananas", "Abacaxis", "Cajus", "Laranjas"]
 
+// adicionar no início da lista
+ListaDeFruta.unshift("Kiwis") // [ "Kiwis", "Maçãs", "uvas", "Bananas", "Abacaxis", "Cajus", "Laranjas"]
 
+// Remover itens da lista
 
+// remover primeiro item
+ListaDeFruta.shift() // ["Maçãs", "uvas", "Bananas", "Abacaxis", "Cajus", "Laranjas"]
 
+// remover o ultimo
+ListaDeFruta.pop() // ["Maçãs", "uvas", "Bananas", "Abacaxis", "Cajus"]
 
+// remover usando o indice como parametro
+var pos = ListaDeFruta.indexOf("Bananas")
+ListaDeFruta.splice(pos) ["Maçãs", "uvas", "Abacaxis", "Cajus"]
 
+// saber o tamanho do array
+var tam = ListaDeFruta.length() // Saída 3 (se começar do 0) ou 4 (se começar do 1)
+
+// saber se é array
+var isArray = ListaDeFruta.isArray() // True
